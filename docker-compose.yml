@@ -1,0 +1,18 @@
+version: '1.75'
+
+services:
+        db:
+                image: mysql:latest
+                restart: always
+                environment:
+                        MYSQL_ROOT_PASSWORD: rootlivraria
+                        MYSQL_DATABASE: livraria
+                        MYSQL_USER: livraria
+                        MYSQL_PASSWORD: livraria
+                ports:
+                        - "6666:3306"
+                volumes:
+                        - db_data_vitor:/var/lib/mysql
+
+volumes:
+        db_data_vitor: {}
